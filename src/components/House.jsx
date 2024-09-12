@@ -13,7 +13,7 @@ const House = ({ house }) => {
         </div>
       </div>
       <div className="text-lg font-semibold max-w-[260px]">{address}</div>
-      <div>
+      <div className="flex gap-x-4 my-4">
         <div className="flex items-center text-gray-600 gap-1">
           <div className="text-[20px]">
             <BiBed />
@@ -22,15 +22,15 @@ const House = ({ house }) => {
         </div>
         <div className="flex items-center text-gray-600 gap-1">
           <div className="text-[20px]">
-            <BiBed />
+            <BiBath />
           </div>
-          <div>{bedrooms}</div>
+          <div>{bathrooms}</div>
         </div>
         <div className="flex items-center text-gray-600 gap-1">
           <div className="text-[20px]">
-            <BiBed />
+            <BiArea />
           </div>
-          <div>{bedrooms}</div>
+          <div>{surface}</div>
         </div>
       </div>
       <div className="text-lg font-semibold text-violet-600 mb-4">{price}</div>

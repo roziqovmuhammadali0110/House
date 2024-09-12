@@ -9,16 +9,14 @@ const HouseList = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center">
-        <ImSpinner2 className="animate-spin text-4xl" />
-      </div>
+      <ImSpinner2 className="mx-auto text-violet-700 mt-[200px] animate-spin text-4xl" />
     );
   }
 
-  if (houses.length === 0) {
+  if (houses.length < 1) {
     return (
       <div className="text-center">
-        <p>No houses available.</p>
+        <p>Sorry, nothing found</p>
       </div>
     );
   }
@@ -26,7 +24,7 @@ const HouseList = () => {
   return (
     <section className="mb-20">
       <div className="container mx-auto">
-        <div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-14">
           {houses.map((house, index) => (
             <Link to={`/property/${house.id}`} key={index}>
               <House house={house} />
