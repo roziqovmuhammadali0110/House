@@ -4,12 +4,11 @@ import {
   RiArrowUpSLine
 } from "react-icons/ri";
 import { Menu } from "@headlessui/react";
-import { useContext, useState } from "react"; // useContextni qo'shish kerak
-import { HouseContext } from "./HouseContext"; // HouseContextni import qilish
+import { useContext, useState } from "react";
+import { HouseContext } from "./HouseContext";
 
 const PriceRangeDropdown = () => {
   const { price, setPrice } = useContext(HouseContext);
-  // const { someData } = useContext(HouseContext); // HouseContextdan ma'lumot olish
   const [isOpen, setIsOpen] = useState(false);
 
   const prices = [
@@ -53,14 +52,16 @@ const PriceRangeDropdown = () => {
         )}
       </Menu.Button>
       <Menu.Items className="dropdown-menu">
-        {prices.map((price, index) => {
+        {prices.map((priceOption, index) => {
           return (
             <Menu.Item
               as="li"
               className="cursor-pointer hover:text-violet-700 transition"
               key={index}
-              onClick={() => setPrice(price)}>
-              {price.value}
+              onClick={() => setPrice(priceOption.value)}>
+              {" "}
+              {/* Faqat value ni o'rnatish */}
+              {priceOption.value}
             </Menu.Item>
           );
         })}
